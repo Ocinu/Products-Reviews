@@ -1,4 +1,4 @@
-# Flask Product Reviews API
+# Flask Products Reviews API
 
 ## Task Description
 
