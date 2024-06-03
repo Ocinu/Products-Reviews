@@ -20,7 +20,7 @@ services:
 
   web:
     build: .
-    command: sh -c "python app.py"
+    command: sh -c "python core/app.py"
     volumes:
       - .:/app
     ports:
@@ -29,6 +29,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      PYTHONPATH: /app
     env_file:
       - .env
