@@ -53,6 +53,7 @@ def get_product(product_id):
 
     return jsonify(
         {
+            "id": product.id,
             "asin": product.asin,
             "title": product.title,
             "reviews": reviews,

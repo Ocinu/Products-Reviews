@@ -35,7 +35,6 @@ create_db: wait_for_db
 seed_db:
 	@echo "Seeding database..."
 	@$(DOCKER_COMPOSE) up -d $(SERVICE_WEB)
-	@timeout /t 10 /nobreak
 	@$(DOCKER_COMPOSE) exec $(SERVICE_WEB) python core/init_db.py
 
 # Run Flask application
